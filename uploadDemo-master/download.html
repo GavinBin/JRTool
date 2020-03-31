@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./bootstrap/bootstrap-theme.min.css" />
+    <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+    <script type="text/javascript" src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
+
+
+    <style>
+        .qrcode {
+            width: 100px;
+            height: 44px;
+            margin: 20px auto 0px auto;
+            display: block;
+        }
+
+        .download {
+            background: #28caad;
+            color: #fff;
+            /* text-decoration: none; */
+            font-size: 18px;
+            /* font-weight: 400; */
+            /* text-align: center; */
+            width: 200px;
+            height: 44px;
+            margin: 100px auto 0px auto;
+            display: block;
+            /* display:none; */
+        }
+
+        .center {
+            margin-left: 0;
+            top: 0;
+            width: 500px;
+            height: 100%;
+            /* padding: 10px; */
+            border-bottom: 1px solid gray;
+        }
+
+        .appName {
+            width: 100%;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            margin-top: 5px;
+            font-size: 22px;
+        }
+
+        .imageIcon {
+            margin-top: 50px;
+            width: 80px;
+            height: 80px;
+            margin: 20px auto 0px;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            margin-top: 15px;
+            height: 22px;
+            list-style-type: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .wrap {
+            width: 100px;
+            height: 40px;
+            background-color: red;
+            text-align: center
+        }
+
+        .wrap p {
+
+            width: 100%;
+            height: 100%;
+            line-height: 2;
+            text-align: center;
+        }
+
+        #file {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 40px;
+            display: block;
+            opacity: 0;
+        }
+
+        .progress {
+            position: relative;
+        }
+
+        .progress-bar {
+            transition: width .3s ease
+        }
+
+        .progress .value {
+            position: absolute;
+            color: #FF9800;
+            left: 50%;
+        }
+
+        .container {
+            width: 500px;
+        }
+
+        .row {
+            border-bottom: 1px solid gray;
+            padding: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <title>上传文件</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="center">
+            <img id="icon" class="imageIcon" style="display:none;" src="" alt='img'>
+            <h1 id="appName" class="appName"></h1>
+            <ul>
+                <li id="name">名称:</li>
+                <li id="version">版本:</li>
+                <li id="expirationDate">过期:</li>
+                <li id="onlyID">唯一标示:</li>
+            </ul>
+        </div>
+        <a id="qrcode" class="qrcode"></a>
+        <button class="download" id="downloadBtn" οnclick="downloadBtnClick()">
+            <a id="downloadA"
+                href="https://appstore.yonyou.com/sites/install.php?name=f_21107463.apk&att=%E9%93%BE%E4%BA%91%E4%BF%9D-2019-03-22%2017:29:46-1.0.apk">点击安装</a>
+        </button>
+    </div>
+    <script src="./lib/jquery-1.10.2.min.js"></script>
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <script src="./lib/spark-md5.min.js"></script>
+    <script src="./lib/app-info-parser.js"></script>
+    <script>
+        let baseUrl = 'http://182.92.71.101:80'
+        let chunkSize = 5 * 1024 * 1024
+        let fileSize = 0
+        let file = null
+        let hasUploaded = 0
+        let chunks = 0
+        let isApk = '';
+        let downloadurl = '';
+        let appid, name = '';
+
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 100,
+            height: 100
+        });
+
+        window.onload = function () {
+            var variables = window.location.search;//获取url中携带的参数
+            var path;
+            if (variables != null && variables != "") {//判断数据是否有效
+                var variablesDe = decodeURI(variables);//重新编码,防止中文参数乱码
+                var variableArray = variablesDe.substr(1).split("&");//将参数进行分割到数组中
+                var md5arr = variableArray[0].split("=");
+                var namearr = variableArray[1].split("=");
+                new Promise((resolve, reject) => {
+                    let url = baseUrl + '/check/file?fileName=' + namearr[1] + "&fileMd5Value=" + md5arr[1]
+                    downloadurl = baseUrl + '/nodeServer/uploads/' + md5arr[1] + '/' + namearr[1];
+                    $.getJSON(url, function (result) {
+                        isApk = new RegExp("apk").test(namearr[1]);
+                        if (isApk) {
+                            $("#name").text("名称: " + result.json.CFBundleDisplayName)
+                            $("#appName").text(result.json.CFBundleDisplayName)
+
+                            $("#version").text("版本: " + result.json.version)
+                            $("#onlyID").text("唯一标示: " + result.json.bundleid)
+                            $("#icon").attr({ "src": result.json.icon })
+                            document.getElementById('icon').style.display = "block";
+                            document.getElementById('expirationDate').style.display = "none";
+                            document.getElementById('expirationDate').style.display = "none";
+                        } else {
+                            $("#appName").text(result.json.CFBundleDisplayName)
+                            $("#name").text("名称: " + result.json.CFBundleDisplayName)
+                            $("#version").text("版本: " + result.json.CFBundleShortVersionString);
+                            $("#expirationDate").text("过期: " + result.json.ExpirationDate);
+                            $("#onlyID").text("唯一标示: " + result.json.bundleid)
+                            $("#icon").attr({ "src": result.json.icon })
+                            document.getElementById('icon').style.display = "block";
+
+                        }
+                        qrcode.makeCode(window.location.href);
+                    })
+                })
+            }
+
+
+        }
+
+        $("#downloadBtn").click(function (event) {
+            $("#downloadA").attr("href", downloadurl);
+        })
+    </script>
+</body>
+
+</html>

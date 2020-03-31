@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MailTableViewCell" id="rAi-ld-rLU" customClass="MailHomeCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rAi-ld-rLU" id="tpi-qC-C1m">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_other_07" translatesAutoresizingMaskIntoConstraints="NO" id="tDz-2f-5Sm">
+                        <rect key="frame" x="59" y="10" width="9" height="9"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="9" id="5qx-C8-7I4"/>
+                            <constraint firstAttribute="height" constant="9" id="lwI-m1-kfk"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="公文" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ij-8z-QCr">
+                        <rect key="frame" x="75" y="10" width="31" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" priority="800" constant="200" id="d2O-oT-cTI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_other_28" translatesAutoresizingMaskIntoConstraints="NO" id="yhm-mO-pah">
+                        <rect key="frame" x="115" y="10" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="4RL-eW-6zC"/>
+                            <constraint firstAttribute="height" constant="16" id="Fs7-th-90E"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_other_52" translatesAutoresizingMaskIntoConstraints="NO" id="i4m-oM-nLF">
+                        <rect key="frame" x="209" y="10" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="QIb-5u-U5h"/>
+                            <constraint firstAttribute="width" constant="16" id="w6E-Ch-yq6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06月07日" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZN-wc-VsU">
+                        <rect key="frame" x="230" y="10" width="60" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="Fg1-4N-tnq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrB-DE-DFk">
+                        <rect key="frame" x="59" y="30" width="231" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJg-2M-x2F">
+                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="HvU-37-gYG"/>
+                            <constraint firstAttribute="height" constant="40" id="fsk-qj-AYX"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TZN-wc-VsU" secondAttribute="trailing" constant="30" id="2Yv-N6-YOT"/>
+                    <constraint firstItem="NrB-DE-DFk" firstAttribute="top" secondItem="6Ij-8z-QCr" secondAttribute="bottom" constant="2" id="3mE-uG-vVU"/>
+                    <constraint firstItem="i4m-oM-nLF" firstAttribute="top" secondItem="tDz-2f-5Sm" secondAttribute="top" id="5Fk-nH-vpe"/>
+                    <constraint firstItem="6Ij-8z-QCr" firstAttribute="leading" secondItem="tDz-2f-5Sm" secondAttribute="trailing" constant="7" id="9cT-E5-Dky"/>
+                    <constraint firstItem="TZN-wc-VsU" firstAttribute="leading" secondItem="i4m-oM-nLF" secondAttribute="trailing" constant="5" id="9de-dm-n0G"/>
+                    <constraint firstItem="TZN-wc-VsU" firstAttribute="top" secondItem="tDz-2f-5Sm" secondAttribute="top" id="Bcu-oq-tJc"/>
+                    <constraint firstItem="tDz-2f-5Sm" firstAttribute="leading" secondItem="RJg-2M-x2F" secondAttribute="trailing" constant="9" id="IIq-1Q-6eR"/>
+                    <constraint firstItem="yhm-mO-pah" firstAttribute="top" secondItem="tDz-2f-5Sm" secondAttribute="top" id="LFH-2F-8Sk"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NrB-DE-DFk" secondAttribute="bottom" constant="12" id="Lrh-ZU-Htq"/>
+                    <constraint firstItem="yhm-mO-pah" firstAttribute="leading" secondItem="6Ij-8z-QCr" secondAttribute="trailing" constant="9" id="Psm-yp-5hY"/>
+                    <constraint firstItem="i4m-oM-nLF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yhm-mO-pah" secondAttribute="trailing" constant="10" id="T99-vI-ab3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="NrB-DE-DFk" secondAttribute="trailing" constant="14" id="U5x-i2-v5S"/>
+                    <constraint firstItem="6Ij-8z-QCr" firstAttribute="leading" secondItem="tDz-2f-5Sm" secondAttribute="trailing" constant="7" id="ZGM-IN-kYb"/>
+                    <constraint firstItem="6Ij-8z-QCr" firstAttribute="top" secondItem="tDz-2f-5Sm" secondAttribute="top" id="Zx7-Lk-V1X"/>
+                    <constraint firstItem="RJg-2M-x2F" firstAttribute="leading" secondItem="tpi-qC-C1m" secondAttribute="leading" constant="10" id="j26-0X-rhg"/>
+                    <constraint firstItem="RJg-2M-x2F" firstAttribute="top" secondItem="tpi-qC-C1m" secondAttribute="top" constant="10" id="m5I-eP-A3P"/>
+                    <constraint firstItem="tDz-2f-5Sm" firstAttribute="top" secondItem="tpi-qC-C1m" secondAttribute="top" constant="10" id="nAf-T3-YKA"/>
+                    <constraint firstItem="NrB-DE-DFk" firstAttribute="leading" secondItem="RJg-2M-x2F" secondAttribute="trailing" constant="9" id="xqv-hV-4HR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="accesImage" destination="yhm-mO-pah" id="h4L-2R-rZr"/>
+                <outlet property="content" destination="NrB-DE-DFk" id="3YB-kS-ZlL"/>
+                <outlet property="importMail" destination="i4m-oM-nLF" id="n2L-Si-E20"/>
+                <outlet property="readImage" destination="tDz-2f-5Sm" id="hhm-jJ-0lb"/>
+                <outlet property="timeLable" destination="TZN-wc-VsU" id="kib-7C-dgB"/>
+                <outlet property="userImage" destination="RJg-2M-x2F" id="58I-yz-ohY"/>
+                <outlet property="userName" destination="6Ij-8z-QCr" id="HhX-hd-meg"/>
+            </connections>
+            <point key="canvasLocation" x="68" y="363"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mail_other_07" width="16" height="16"/>
+        <image name="mail_other_28" width="21" height="21"/>
+        <image name="mail_other_52" width="12" height="11"/>
+    </resources>
+</document>

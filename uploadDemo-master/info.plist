@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>assets</key>
+			<array>
+				<dict>
+					<key>kind</key>
+					<string>software-package</string>
+					<key>url</key>
+					<string>http://pan.yonyou.com/unode/stor/downloadByUrl?downloadId=1.eyJhZ2UiOjg2NDAwLCJidWNrZXQiOiJkZWZhdWx0IiwiY3RpbWUiOjE1NzkwNTM2ODEsImtleSI6ImxPZFlseWQzLWtzcnJia0VteC16Z0liR0NHb0FBQUFLRDlPWSIsImxlbiI6MTY4ODA5MzY4LCJuYW1lIjoid3guaXBhIiwicG9zIjowLCJzaXplIjoxNjg4MDkzNjh9.2859846769</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>full-size-image</string>
+					<key>needs-shine</key>
+					<true/>
+					<key>url</key>
+					<string>https://wx-1254064196.cos.ap-beijing.myqcloud.com/AppIcon.png</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>display-image</string>
+					<key>needs-shine</key>
+					<true/>
+					<key>url</key>
+					<string>https://wx-1254064196.cos.ap-beijing.myqcloud.com/AppIcon.png</string>
+				</dict>
+			</array>
+			<key>metadata</key>
+			<dict>
+				<key>bundle-identifier</key>
+				<string>com.caitong.ctwbSim</string>
+				<key>bundle-version</key>
+				<string>7.0.2.34</string>
+				<key>kind</key>
+				<string>software</string>
+				<key>title</key>
+				<string>YinHu App install…</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
